@@ -1,18 +1,20 @@
 class solution{
     public:
-          void count_primes(int n){
-                vector<bool> primes(n+1,false);
-                for(int i = 2; i <= n; i++){
-                        if(!prime[i]){
-                            for(int j = i*i; j <= n; j = j + i){
-                                prime[j] = true;
-                            }
+          void countPrimes(int n) {
+                vector<bool> prime(n,true);
+                int count = 0;
+                for(int i = 2; i < n; i++){
+                    if(prime[i]){
+                        for(long long j = (long long)i*i; j < n; j = j + i){
+                            prime[j] = false;
                         }
+                    }
+                }    
+                for(int i= 2; i < n; i++){
+                    if(prime[i]){
+                        cout<<i<<endl;
+                    }
                 }
-                for(int i = 2; i <= n; i++){
-                      if(!prime[i]){
-                          cout<<prime[i]<<endl;
-                      }
-                }
-          }
+                return count;
+            }
 };

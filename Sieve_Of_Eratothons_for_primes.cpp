@@ -15,6 +15,5 @@ class solution{
                         cout<<i<<endl;
                     }
                 }
-                return count;
             }
 };
